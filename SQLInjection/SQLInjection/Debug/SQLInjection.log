@@ -1,0 +1,6 @@
+﻿  SQLInjection.cpp
+C:\Users\Sammy\Google Drive\_SNHU_Course_Work\BSCS-Computer_Science\CS-405-H4245_Secure_Coding\code\cs405\SQLInjection\SQLInjection\SQLInjection.cpp(93,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Sammy\Google Drive\_SNHU_Course_Work\BSCS-Computer_Science\CS-405-H4245_Secure_Coding\code\cs405\SQLInjection\SQLInjection\SQLInjection.cpp(112,30): warning C4101: 'e': unreferenced local variable
+C:\Users\Sammy\Google Drive\_SNHU_Course_Work\BSCS-Computer_Science\CS-405-H4245_Secure_Coding\code\cs405\SQLInjection\SQLInjection\SQLInjection.cpp(226,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  sqlite3.c
+  SQLInjection.vcxproj -> C:\Users\Sammy\Google Drive\_SNHU_Course_Work\BSCS-Computer_Science\CS-405-H4245_Secure_Coding\code\cs405\SQLInjection\Debug\SQLInjection.exe
