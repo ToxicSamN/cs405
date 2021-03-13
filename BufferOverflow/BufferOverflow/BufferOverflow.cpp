@@ -16,7 +16,7 @@ int main()
 
   // Declare an input character maximum
   const int INPUT_MAX = 20;
-  // declare the accoutn number and the user_input character array
+  // declare the account number and the user_input character array
   const std::string account_number = "CharlieBrown42";
   char user_input[INPUT_MAX];
 
