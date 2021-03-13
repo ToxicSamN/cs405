@@ -80,7 +80,7 @@ bool initialize_database(sqlite3* db)
 bool sqlInjection_detection(const std::string& sql) {
     try {
         // blind sql injection detection regex
-        auto const regex_injection = std::regex("[\\'\"0-9a-z]\\s*(or|and)\\s*[\\'\"]{0,1}((\\w+)|(\\d+))[\\'\"]{0,1}(\\=)[\\'\"]{0,1}((\\w+)|(\\d+))[\\'\"]{0,1}", std::regex_constants::icase);
+        auto const regex_injection = std::regex("[\\'\"0-9a-z]\\s*(or)\\s*[\\'\"]{0,1}((\\w+)|(\\d+))[\\'\"]{0,1}(\\=)[\\'\"]{0,1}((\\w+)|(\\d+))[\\'\"]{0,1}", std::regex_constants::icase);
 
         // create a localized copy, we work on the local copy because of the const
         std::string sqlCopy(sql);
