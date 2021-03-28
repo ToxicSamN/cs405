@@ -59,7 +59,7 @@ float divide(float num, float den)
     // TODO: Throw an exception to deal with divide by zero errors using
     //  a standard C++ defined exception
     if (den == 0) {
-        throw DivideByZeroException();
+        throw std::logic_error("divide by zero exception");
     }
     return (num / den);
 }
@@ -76,7 +76,7 @@ void do_division() noexcept
         auto result = divide(numerator, denominator);
         std::cout << "divide(" << numerator << ", " << denominator << ") = " << result << std::endl;
     }
-    catch (DivideByZeroException& e) {
+    catch (std::logic_error& e) {
         std::cout << e.what() << std::endl;
     }
 }
@@ -94,8 +94,14 @@ int main()
         do_division();
         do_custom_application_logic();
     }
+    catch (CustomException& e) {
+        std::cout << e.what() << std::endl;
+    }
     catch (std::exception& e) {
         std::cout << e.what() << std::endl;
+    }
+    catch (...) {
+        std::cout << "Unknown exception occurred" << std::endl;
     }
 }
 
