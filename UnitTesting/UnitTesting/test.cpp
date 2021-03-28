@@ -89,10 +89,10 @@ TEST_F(CollectionTest, AlwaysFail)
 TEST_F(CollectionTest, CanAddToEmptyVector)
 {
     // is the collection empty?
-    ASSERT_TRUE(collection->empty());
+    EXPECT_TRUE(collection->empty());
 
     // if empty, the size must be 0
-    ASSERT_EQ(collection->size(), 0);
+    EXPECT_EQ(collection->size(), 0);
     
     add_entries(1);
 
@@ -107,10 +107,10 @@ TEST_F(CollectionTest, CanAddToEmptyVector)
 TEST_F(CollectionTest, CanAddFiveValuesToVector)
 {
     // is the collection empty?
-    ASSERT_TRUE(collection->empty());
+    EXPECT_TRUE(collection->empty());
 
     // if empty, the size must be 0
-    ASSERT_EQ(collection->size(), 0);
+    EXPECT_EQ(collection->size(), 0);
 
     add_entries(5);
 
@@ -125,62 +125,62 @@ TEST_F(CollectionTest, CanAddFiveValuesToVector)
 TEST_F(CollectionTest, IsMaxSizeEqualToSize) 
 {
     // is the collection empty?
-    ASSERT_TRUE(collection->empty());
+    EXPECT_TRUE(collection->empty());
 
     // if empty, the size must be 0
-    ASSERT_EQ(collection->size(), 0);
+    EXPECT_EQ(collection->size(), 0);
     
     // if empty, max size must be >=0
-    ASSERT_TRUE(collection->max_size() >= collection->size());
+    EXPECT_TRUE(collection->max_size() >= collection->size());
 
     // add 1 entry
     add_entries(1);
     // max size must be greater than or equal to size==1
-    ASSERT_TRUE(collection->max_size() >= collection->size());
+    EXPECT_TRUE(collection->max_size() >= collection->size());
 
     add_entries(5);
     // max size must be greater than or equal to size==5
-    ASSERT_TRUE(collection->max_size() >= collection->size());
+    EXPECT_TRUE(collection->max_size() >= collection->size());
 
     add_entries(10);
     // max size must be greater than or equal to size==1
-    ASSERT_TRUE(collection->max_size() >= collection->size());
+    EXPECT_TRUE(collection->max_size() >= collection->size());
 }
 
 // TODO: Create a test to verify that capacity is greater than or equal to size for 0, 1, 5, 10 entries
 TEST_F(CollectionTest, IsCapacityEqualToSize)
 {
     // is the collection empty?
-    ASSERT_TRUE(collection->empty());
+    EXPECT_TRUE(collection->empty());
 
     // if empty, the size must be 0
-    ASSERT_EQ(collection->size(), 0);
+    EXPECT_EQ(collection->size(), 0);
 
     // if empty, capacity size must be >=0
-    ASSERT_TRUE(collection->capacity() >= collection->size());
+    EXPECT_TRUE(collection->capacity() >= collection->size());
 
     // add 1 entry
     add_entries(1);
     // capacity size must be greater than or equal to size==1
-    ASSERT_TRUE(collection->capacity() >= collection->size());
+    EXPECT_TRUE(collection->capacity() >= collection->size());
 
     add_entries(5);
     // capacity size must be greater than or equal to size==5
-    ASSERT_TRUE(collection->capacity() >= collection->size());
+    EXPECT_TRUE(collection->capacity() >= collection->size());
 
     add_entries(10);
     // capacity size must be greater than or equal to size==1
-    ASSERT_TRUE(collection->capacity() >= collection->size());
+    EXPECT_TRUE(collection->capacity() >= collection->size());
 }
 
 // TODO: Create a test to verify resizing increases the collection
 TEST_F(CollectionTest, CanResizeIncrease)
 {
     // is the collection empty?
-    ASSERT_TRUE(collection->empty());
+    EXPECT_TRUE(collection->empty());
 
     // if empty, the size must be 0
-    ASSERT_EQ(collection->size(), 0);
+    EXPECT_EQ(collection->size(), 0);
 
     // get current size
     auto start_size = collection->size();
@@ -195,19 +195,19 @@ TEST_F(CollectionTest, CanResizeIncrease)
 TEST_F(CollectionTest, CanResizeDecrease)
 {
     // is the collection empty?
-    ASSERT_TRUE(collection->empty());
+    EXPECT_TRUE(collection->empty());
 
     // if empty, the size must be 0
-    ASSERT_EQ(collection->size(), 0);
+    EXPECT_EQ(collection->size(), 0);
 
     // increase collection size by adding entries
     add_entries(2);
 
     // collection should not be empty
-    ASSERT_FALSE(collection->empty());
+    EXPECT_FALSE(collection->empty());
 
     // if not empty, size should be 1
-    ASSERT_EQ(collection->size(), 2);
+    EXPECT_EQ(collection->size(), 2);
     
     // get starting size
     auto start_size = collection->size();
@@ -223,19 +223,19 @@ TEST_F(CollectionTest, CanResizeDecrease)
 TEST_F(CollectionTest, CanResizeDecreaseToZero)
 {
     // is the collection empty?
-    ASSERT_TRUE(collection->empty());
+    EXPECT_TRUE(collection->empty());
 
     // if empty, the size must be 0
-    ASSERT_EQ(collection->size(), 0);
+    EXPECT_EQ(collection->size(), 0);
 
     // increase collection size by adding entries
     add_entries(2);
 
     // collection should not be empty
-    ASSERT_FALSE(collection->empty());
+    EXPECT_FALSE(collection->empty());
 
     // if not empty, size should be 1
-    ASSERT_EQ(collection->size(), 2);
+    EXPECT_EQ(collection->size(), 2);
 
     // get starting size
     auto start_size = collection->size();
@@ -251,19 +251,19 @@ TEST_F(CollectionTest, CanResizeDecreaseToZero)
 TEST_F(CollectionTest, CanClearCollection)
 {
     // is the collection empty?
-    ASSERT_TRUE(collection->empty());
+    EXPECT_TRUE(collection->empty());
 
     // if empty, the size must be 0
-    ASSERT_EQ(collection->size(), 0);
+    EXPECT_EQ(collection->size(), 0);
 
     // add entries to be cleared
     add_entries(1);
 
     // collection should not be empty
-    ASSERT_FALSE(collection->empty());
+    EXPECT_FALSE(collection->empty());
 
     // if not empty, size should be 1
-    ASSERT_EQ(collection->size(), 1);
+    EXPECT_EQ(collection->size(), 1);
 
     // clear the entries
     collection->clear();
@@ -277,19 +277,19 @@ TEST_F(CollectionTest, CanEraseBeginToEnd)
 {
 
     // is the collection empty?
-    ASSERT_TRUE(collection->empty());
+    EXPECT_TRUE(collection->empty());
 
     // if empty, the size must be 0
-    ASSERT_EQ(collection->size(), 0);
+    EXPECT_EQ(collection->size(), 0);
 
     // increase collection size by adding entries
     add_entries(2);
 
     // collection should not be empty
-    ASSERT_FALSE(collection->empty());
+    EXPECT_FALSE(collection->empty());
 
     // if not empty, size should be 1
-    ASSERT_EQ(collection->size(), 2);
+    EXPECT_EQ(collection->size(), 2);
 
     // erase collection from begin to end
     collection->erase(collection->begin(), collection->end());
@@ -302,10 +302,10 @@ TEST_F(CollectionTest, CanEraseBeginToEnd)
 TEST_F(CollectionTest, CanReserveCapacityNotSize)
 {
     // is the collection empty?
-    ASSERT_TRUE(collection->empty());
+    EXPECT_TRUE(collection->empty());
 
     // if empty, the size must be 0
-    ASSERT_EQ(collection->size(), 0);
+    EXPECT_EQ(collection->size(), 0);
 
     // reserve capacity
     collection->reserve(2);
@@ -322,10 +322,10 @@ TEST_F(CollectionTest, CanReserveCapacityNotSize)
 TEST_F(CollectionTest, AlwaysFailIndexOutOfRange)
 {
     // is the collection empty?
-    ASSERT_TRUE(collection->empty());
+    EXPECT_TRUE(collection->empty());
 
     // if empty, the size must be 0
-    ASSERT_EQ(collection->size(), 0);
+    EXPECT_EQ(collection->size(), 0);
 
     // wrap in try/catch block to verify excpetion
     try {
@@ -341,23 +341,23 @@ TEST_F(CollectionTest, AlwaysFailIndexOutOfRange)
     ASSERT_TRUE(true);
 }
 
-// TODO: Create 2 unit tests of your own to test something on the collection - do 1 positive & 1 negative
-TEST_F(CollectionTest, CanShrinkToFitCapcityWithSize)
+// TODO: Create a test to verify capacity shrinks to fit size of the collection
+TEST_F(CollectionTest, CanShrinkToFitCapacityWithSize)
 {
     // is the collection empty?
-    ASSERT_TRUE(collection->empty());
+    EXPECT_TRUE(collection->empty());
 
     // if empty, the size must be 0
-    ASSERT_EQ(collection->size(), 0);
+    EXPECT_EQ(collection->size(), 0);
 
     // reserve capacity
     collection->reserve(2);
 
     // capacity must be 2
-    ASSERT_EQ(collection->capacity(), 2);
+    EXPECT_EQ(collection->capacity(), 2);
 
     // size must be 0
-    ASSERT_EQ(collection->size(), 0);
+    EXPECT_EQ(collection->size(), 0);
 
     // Shrink to fit capcity to size
     collection->shrink_to_fit();
@@ -366,15 +366,15 @@ TEST_F(CollectionTest, CanShrinkToFitCapcityWithSize)
     ASSERT_EQ(collection->capacity(), collection->size());
 }
 
-// TODO: Create 2 unit tests of your own to test something on the collection - do 1 positive & 1 negative
+// TODO: Create a negative test to verify the std::length_error is thrown when attempting to resize with a negative index
 // NOTE: This is a negative test
 TEST_F(CollectionTest, AlwaysFailResizeToNegativeSize)
 {
     // is the collection empty?
-    ASSERT_TRUE(collection->empty());
+    EXPECT_TRUE(collection->empty());
 
     // if empty, the size must be 0
-    ASSERT_EQ(collection->size(), 0);
+    EXPECT_EQ(collection->size(), 0);
 
     // get starting size
     auto start_size = collection->size(); // is 0
