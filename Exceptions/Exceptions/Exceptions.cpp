@@ -10,13 +10,6 @@ struct CustomException : public std::exception {
     }
 };
 
-// DivideByZeroException definition for handling errors
-struct DivideByZeroException : public std::exception {
-    const char* what() const throw() {
-        return "divide by zero exception occurred";
-    }
-};
-
 bool do_even_more_custom_application_logic()
 {
     // TODO: Throw any standard exception
