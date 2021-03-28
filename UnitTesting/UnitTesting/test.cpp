@@ -332,13 +332,13 @@ TEST_F(CollectionTest, AlwaysFailIndexOutOfRange)
         // collection size is 0, so no index of 1 exists
         // this should trhwo an exception
         collection->at(1);
-
-        // if excpetion not thrown, then fail the test with a "positive" test result
-        ASSERT_TRUE(true);
     }
     catch (std::out_of_range) {
         FAIL() << "Out Of Range exception thrown";
     }
+
+    // if excpetion not thrown, then fail the test with a "positive" test result
+    ASSERT_TRUE(true);
 }
 
 // TODO: Create 2 unit tests of your own to test something on the collection - do 1 positive & 1 negative
@@ -384,11 +384,11 @@ TEST_F(CollectionTest, AlwaysFailResizeToNegativeSize)
     // to verify exception thrown
     try {
         collection->resize(start_size - 1);
-        
-        // if excpetion not thrown, then fail the test with a "positive" test result
-        ASSERT_TRUE(true);
     }
     catch (std::length_error) {
         FAIL() << "exception 'vector too long', cannot allocate a negative vector size";
     }
+
+    // if exception not thrown, then fail the test with a "positive" test result
+    ASSERT_TRUE(true);
 }
