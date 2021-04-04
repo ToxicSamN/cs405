@@ -1,0 +1,14 @@
+[04.04.2021]
+1617553968054
+cppcheck-error:2
+cppcheck-warning:6
+cppcheck-style:8
+cppcheck-performance:0
+cppcheck-portability:0
+[04.04.2021]
+1617554066395
+cppcheck-error:2
+cppcheck-warning:6
+cppcheck-style:8
+cppcheck-performance:0
+cppcheck-portability:0
